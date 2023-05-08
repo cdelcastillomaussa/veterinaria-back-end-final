@@ -10,7 +10,7 @@ public class Propietario  {
     private String documento;
     private String nombre_propietario;
     private String direccion;
-    private Ciudad ciudad;
     private String telefono;
+    private Ciudad ciudad;
 
 }

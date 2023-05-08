@@ -14,10 +14,10 @@ public class PropietarioMapper implements RowMapper<Propietario> {
         resultprop.setTipo_doc(rs.getString("tipo_doc"));
         resultprop.setDocumento(rs.getString("documento"));
         resultprop.setNombre_propietario(rs.getString("nombre_propietario"));
-        ciudad.setNmid(rs.getInt("nmid_ciudad"));
-        resultprop.setCiudad(ciudad);
         resultprop.setDireccion(rs.getString("direccion"));
         resultprop.setTelefono(rs.getString("telefono"));
+        ciudad.setNmid(rs.getInt("nmid_ciudad"));
+        resultprop.setCiudad(ciudad);
         return resultprop;
     }
 }
