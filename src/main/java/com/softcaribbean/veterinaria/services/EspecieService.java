@@ -1,6 +1,5 @@
 package com.softcaribbean.veterinaria.services;
 
-import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.exception.ServiceException;
 
 import java.util.List;

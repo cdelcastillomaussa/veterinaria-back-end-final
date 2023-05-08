@@ -1,6 +1,5 @@
 package com.softcaribbean.veterinaria.manager;
 
-import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.exception.MgrException;
 
 import java.util.List;

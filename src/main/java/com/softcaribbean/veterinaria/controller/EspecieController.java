@@ -1,11 +1,9 @@
 package com.softcaribbean.veterinaria.controller;
 
-import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.exception.ControllerException;
 import com.softcaribbean.veterinaria.exception.ServiceException;
 import com.softcaribbean.veterinaria.msg.Mensajes;
 import com.softcaribbean.veterinaria.services.EspecieService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

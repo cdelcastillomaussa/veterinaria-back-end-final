@@ -1,7 +1,6 @@
 package com.softcaribbean.veterinaria.manager;
 
 import com.softcaribbean.veterinaria.dao.EspecieDAO;
-import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.exception.DAOException;
 import com.softcaribbean.veterinaria.exception.MgrException;
 import org.springframework.stereotype.Component;

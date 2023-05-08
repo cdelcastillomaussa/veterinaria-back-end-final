@@ -3,7 +3,6 @@ package com.softcaribbean.veterinaria.services;
 import com.softcaribbean.veterinaria.exception.MgrException;
 import com.softcaribbean.veterinaria.exception.ServiceException;
 import com.softcaribbean.veterinaria.manager.CiudadMGR;
-import com.softcaribbean.veterinaria.manager.EspecieMGR;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
