@@ -37,7 +37,7 @@ public class PropietarioMGRImpl implements PropietarioMGR {
         try {
             Propietario propietario = propietarioDAO.getById(nmid);
             if(propietario == null){
-                System.out.println("El tomador no existe");
+                System.out.println("El propietario no existe");
             }else {
                 propietarioDAO.delete(nmid);
             }
