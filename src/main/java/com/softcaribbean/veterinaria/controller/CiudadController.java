@@ -1,16 +1,17 @@
 package com.softcaribbean.veterinaria.controller;
 
-import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.exception.ControllerException;
 import com.softcaribbean.veterinaria.exception.ServiceException;
 import com.softcaribbean.veterinaria.msg.Mensajes;
-import com.softcaribbean.veterinaria.services.EspecieService;
-import jakarta.validation.Valid;
+import com.softcaribbean.veterinaria.services.CiudadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
@@ -19,25 +20,24 @@ import java.util.Map;
 @Service
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost/4200")
-public class EspecieController {
+public class CiudadController {
     @Autowired
-    private EspecieService especieService;
+    private CiudadService ciudadService;
 
-    public EspecieController(EspecieService especieService) {
+    public CiudadController(CiudadService ciudadService){
+        this.ciudadService = ciudadService;
 
-        this.especieService = especieService;
     }
-
     @CrossOrigin(origins = "http://localhost/4200")
-    @GetMapping("/especie/mostrar_especie")
-    public ResponseEntity<Mensajes> getEspecie() throws ControllerException {
+    @GetMapping("/ciudad/mostrar_ciudad")
+    public ResponseEntity<Mensajes> getCiudad() throws ControllerException {
         Mensajes mensajes = new Mensajes();
-        List<Map<String,Object>> especies;
+        List<Map<String,Object>> ciudades;
         try {
-            especies = especieService.mostrarEspecies();
+            ciudades = ciudadService.mostrarCiudades();
             mensajes.setCode("0");
-            mensajes.setMensaje("Lista de especies...");
-            mensajes.setDato(especies);
+            mensajes.setMensaje("Lista de ciudades...");
+            mensajes.setDato(ciudades);
 
         }catch (ServiceException ex) {
             mensajes.setCode("1");
@@ -46,5 +46,4 @@ public class EspecieController {
         }
         return ResponseEntity.ok(mensajes);
     }
-
 }

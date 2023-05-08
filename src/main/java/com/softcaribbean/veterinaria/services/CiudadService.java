@@ -1,11 +1,11 @@
 package com.softcaribbean.veterinaria.services;
 
-import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.exception.ServiceException;
 
 import java.util.List;
 import java.util.Map;
 
-public interface EspecieService {
-    List<Map<String,Object>> mostrarEspecies() throws ServiceException;
+public interface CiudadService {
+    List<Map<String,Object>> mostrarCiudades() throws ServiceException;
+
 }
