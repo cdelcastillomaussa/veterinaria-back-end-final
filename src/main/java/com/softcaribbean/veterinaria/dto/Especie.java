@@ -4,8 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 @Data
-public class ciudad implements Serializable {
+public class Especie implements Serializable {
     private int nmid;
-    private String nombre_ciudad;
-    private int codigo;
+    private String nombre_especie;
 }

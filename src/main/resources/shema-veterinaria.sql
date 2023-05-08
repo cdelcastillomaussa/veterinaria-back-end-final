@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS mascota (
 	nombre_mascota varchar(20) NOT NULL,
 	nmid_raza INT NOT NULL, -- referencia hacia la tabla raza
 	f_naci date default null,
-	nmid_propietario INT NOT NULL, -- referencia hacia la tabla propietario
+	nmid_propietario INT NOT NULL, -- referencia hacia la tabla Propietario
 	f_reg timestamp,
 	PRIMARY KEY (nmid)
 );
@@ -39,14 +39,14 @@ CREATE TABLE IF NOT EXISTS especie (
 	PRIMARY KEY (nmid)
 );
 
--- Relacion propietario - ciudad
+-- Relacion Propietario - Ciudad
 ALTER TABLE propietario ADD FOREIGN KEY (nmid_ciudad) REFERENCES ciudad(nmid);
 
 --Relacion raza - especie
 ALTER TABLE raza ADD FOREIGN KEY (nmid_especie) REFERENCES especie(nmid);
 
---Relacion mascota - raza
+--Relacion Mascota - raza
 ALTER TABLE mascota ADD FOREIGN KEY (nmid_raza) REFERENCES raza(nmid);
 
---Relacion mascota - propietario 
+--Relacion Mascota - Propietario
 ALTER TABLE mascota ADD FOREIGN KEY (nmid_propietario) REFERENCES propietario(nmid);

@@ -4,13 +4,13 @@ import lombok.Data;
 
 import java.io.Serializable;
 @Data
-public class propietario implements Serializable {
+public class Propietario implements Serializable {
     private int nmid;
     private String tipo_doc;
     private String documento;
-    private String nombre_completo;
-    private String ciudad;
+    private String nombre_propietario;
     private String direccion;
-    private String telefono;
     private int nmid_ciudad;
+    private String telefono;
+
 }
