@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS propietario (
 	nmid SERIAL,
-	tipo_doc varchar(35) NOT NULL,
+	tipo_doc varchar(50) NOT NULL,
 	documento varchar(15) NOT NULL,
 	nombre_propietario varchar(35) NOT NULL, --nombre completo
 	direccion varchar(40) NOT NULL,
