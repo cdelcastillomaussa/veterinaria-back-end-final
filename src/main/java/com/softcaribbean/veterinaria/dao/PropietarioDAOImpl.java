@@ -81,7 +81,7 @@ public class PropietarioDAOImpl implements PropietarioDAO {
                 "C.nmid as nmid_ciudad,\n" +
                 "C.nombre_ciudad,\n" +
                 "C.codigo\n" +
-                "FROM propietario P INNER JOIN ciudad C ON P.nmid_ciudad = C.nmid ";
+                "FROM propietario P INNER JOIN ciudad C ON P.nmid_ciudad = C.nmid ORDER BY P.nmid DESC";
         List<Map<String,Object>> listPropietario;
         try {
             listPropietario = jdbcTemplate.queryForList(SELECT);
