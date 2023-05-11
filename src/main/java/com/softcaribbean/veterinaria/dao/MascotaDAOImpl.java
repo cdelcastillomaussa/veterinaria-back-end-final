@@ -74,13 +74,15 @@ public class MascotaDAOImpl implements MascotaDAO {
         String SELECT = "SELECT \n" +
                 "M.nmid,\n" +
                 "M.nombre_mascota,\n" +
+                "E.nmid as nmid_especie,\n" +
                 "E.nombre_especie,\n" +
                 "M.raza,\n" +
-                "M.f_naci as f_naci_mascota,\n" +
+                "M.f_naci,\n" +
+                "P.nmid as nmid_propietario,\n" +
                 "P.nombre_propietario,\n" +
                 "M.f_reg\n" +
                 "FROM mascota M INNER JOIN especie E ON M.nmid_especie = E.nmid\n" +
-                "INNER JOIN propietario P ON M.nmid_propietario = P.nmid";
+                "INNER JOIN propietario P ON M.nmid_propietario = P.nmid ORDER BY M.nmid DESC";
         List<Map<String,Object>> listMascota;
         try {
             listMascota = jdbcTemplate.queryForList(SELECT);
