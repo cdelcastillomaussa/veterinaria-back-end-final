@@ -39,6 +39,7 @@ public class MascotaMGRImpl implements MascotaMGR {
                 System.out.println("La mascota no existe");
             }else {
                 mascotaDAO.delete(nmid);
+                System.out.println("Mascota eliminada exitosamente");
             }
         } catch (DAOException e) {
             throw new MgrException(e);

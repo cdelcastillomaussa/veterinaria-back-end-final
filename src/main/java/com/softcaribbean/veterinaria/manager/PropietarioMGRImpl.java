@@ -40,6 +40,7 @@ public class PropietarioMGRImpl implements PropietarioMGR {
                 System.out.println("El propietario no existe");
             }else {
                 propietarioDAO.delete(nmid);
+                System.out.println("Propietario eliminado exitosamente");
             }
         } catch (DAOException e) {
             throw new MgrException(e);
