@@ -57,7 +57,7 @@ public class MascotaDAOImpl implements MascotaDAO {
                 "M.nmid, \n" +
                 "M.nombre_mascota, \n" +
                 "M.nmid_especie, \n" +
-                "M.raza, \n" +
+                //"M.raza, \n" +
                 "M.f_naci, \n" +
                 "M.nmid_propietario, \n" +
                 "M.f_reg \n" +

@@ -24,8 +24,8 @@ public class RazaController {
     public RazaController(RazaService razaService){
         this.razaService = razaService;
     }
-    @GetMapping("/raza/mostrar_razas")
-    public ResponseEntity<Mensajes> getRazasByEspecie(@RequestParam int nmid) throws ControllerException {
+    @GetMapping("/raza/mostrar_razas/{nmid}")
+    public ResponseEntity<Mensajes> getRazasByEspecie(@PathVariable int nmid) throws ControllerException {
         Mensajes mensajes = new Mensajes();
         List<Map<String, Object>> razas;
         try {

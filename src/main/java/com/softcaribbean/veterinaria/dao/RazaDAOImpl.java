@@ -23,7 +23,7 @@ public class RazaDAOImpl implements RazaDAO {
         String SELECT = "SELECT r.nmid, r.nombre_raza FROM raza r WHERE r.nmid_especie = ?";
         List<Map<String, Object>> listRazas;
         try {
-            listRazas = jdbcTemplate.queryForList(SELECT);
+            listRazas = jdbcTemplate.queryForList(SELECT, nmid);
         } catch (Exception e){
             throw new DAOException(e);
         }
