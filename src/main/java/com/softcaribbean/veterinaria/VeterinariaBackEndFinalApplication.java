@@ -21,7 +21,7 @@ public class VeterinariaBackEndFinalApplication {
     public FilterRegistrationBean<FiltrosCors> corsFilterRegistration() {
         FilterRegistrationBean<FiltrosCors> registrationBean = new FilterRegistrationBean<>(new FiltrosCors());
         registrationBean.setName("filtros CORS");
-        registrationBean.addUrlPatterns("/*");
+        registrationBean.addUrlPatterns("");
         registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return registrationBean;
     }
