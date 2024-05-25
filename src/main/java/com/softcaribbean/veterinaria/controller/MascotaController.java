@@ -34,12 +34,13 @@ public class MascotaController {
             mascotaService.createMascota(mascota);
             mensajes.setCode("0");
             mensajes.setMensaje("se creo la mascota con éxito");
+            mensajes.setDato(mascota);
         }catch (ServiceException ex){
             mensajes.setCode("1");
             mensajes.setMensaje("fallo "+ex.getMessage());
             throw new ControllerException(ex);
         }
-        return ResponseEntity.ok( mensajes);
+        return ResponseEntity.ok(mensajes);
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -67,7 +68,7 @@ public class MascotaController {
         try {
             mascotaService.eliminarMascotas(nmid);
             mensajes.setCode("0");
-            mensajes.setMensaje("Mascota eliminada exitosamente!");
+            mensajes.setMensaje("Mascota «nmid» eliminada exitosamente!");
         }catch (ServiceException e){
             mensajes.setCode("1");
             mensajes.setMensaje("fallo " + e.getMessage());

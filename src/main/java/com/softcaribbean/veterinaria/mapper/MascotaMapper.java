@@ -3,6 +3,7 @@ package com.softcaribbean.veterinaria.mapper;
 import com.softcaribbean.veterinaria.dto.Especie;
 import com.softcaribbean.veterinaria.dto.Mascota;
 import com.softcaribbean.veterinaria.dto.Propietario;
+import com.softcaribbean.veterinaria.dto.Razas;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -14,11 +15,13 @@ public class MascotaMapper implements RowMapper<Mascota> {
         Mascota resultmascota = new Mascota();
         Especie especie = new Especie();
         Propietario propietario = new Propietario();
+        Razas raza = new Razas();
 
         resultmascota.setNombre_mascota(rs.getString("nombre_mascota"));
         especie.setNmid(rs.getInt("nmid_especie"));
         resultmascota.setEspecie(especie);
-        resultmascota.setRaza(rs.getString("raza"));
+        raza.setNmid(rs.getInt("nmid_raza"));
+        resultmascota.setRaza(raza);
         resultmascota.setF_naci(rs.getDate("f_naci"));
         propietario.setNmid(rs.getInt("nmid_propietario"));
         resultmascota.setPropietario(propietario);
