@@ -15,29 +15,28 @@ import java.util.Map;
 public class MascotaDAOImpl implements MascotaDAO {
     private JdbcTemplate jdbcTemplate;
     public MascotaDAOImpl(DataSource dataSource) {
-
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
     public void insert(Mascota mascota) throws DAOException {
         String INSERT = "INSERT INTO public.mascota(\n" +
-                "\tnombre_mascota, nmid_especie, raza, f_naci, nmid_propietario, f_reg)\n" +
+                "\tnombre_mascota, nmid_especie, nmid_raza, f_naci, nmid_propietario, f_reg)\n" +
                 "\tVALUES (?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(INSERT,
                 mascota.getNombre_mascota(),
                 mascota.getEspecie().getNmid(),
-                mascota.getRaza(),
+                mascota.getRaza().getNmid(),
                 mascota.getF_naci(),
                 mascota.getPropietario().getNmid(),
                 mascota.getF_reg());
     }
     public void update(Mascota mascota) throws DAOException {
         String UPDATE = "UPDATE public.mascota\n" +
-                "\tSET nombre_mascota=?, nmid_especie=?, raza=?, f_naci=?, nmid_propietario=?,  f_reg=? \n" +
+                "\tSET nombre_mascota=?, nmid_especie=?, nmid_raza=?, f_naci=?, nmid_propietario=?,  f_reg=? \n" +
                 "\tWHERE nmid=?";
         jdbcTemplate.update(UPDATE,
                 mascota.getNombre_mascota(),
                 mascota.getEspecie().getNmid(),
-                mascota.getRaza(),
+                mascota.getRaza().getNmid(),
                 mascota.getF_naci(),
                 mascota.getPropietario().getNmid(),
                 mascota.getF_reg(),
@@ -57,11 +56,11 @@ public class MascotaDAOImpl implements MascotaDAO {
                 "M.nmid, \n" +
                 "M.nombre_mascota, \n" +
                 "M.nmid_especie, \n" +
-                //"M.raza, \n" +
+                "M.nmid_raza, \n" +
                 "M.f_naci, \n" +
                 "M.nmid_propietario, \n" +
                 "M.f_reg \n" +
-                "FROM public.mascota M WHERE M.nmid = ? ";
+                "FROM public.mascota M WHERE M.nmid = ?";
         Mascota mascota = null;
         try {
             mascota = jdbcTemplate.queryForObject(SELECTBYID, new Object[]{nmid}, new MascotaMapper());
@@ -76,14 +75,16 @@ public class MascotaDAOImpl implements MascotaDAO {
                 "M.nombre_mascota,\n" +
                 "E.nmid as nmid_especie,\n" +
                 "E.nombre_especie,\n" +
-                "M.raza,\n" +
+                "M.nmid_raza,\n" +
                 "M.f_naci,\n" +
                 "P.nmid as nmid_propietario,\n" +
                 "P.nombre_propietario,\n" +
                 "M.f_reg\n" +
                 "FROM mascota M INNER JOIN especie E ON M.nmid_especie = E.nmid\n" +
                 "INNER JOIN propietario P ON M.nmid_propietario = P.nmid ORDER BY M.nmid DESC";
+
         List<Map<String,Object>> listMascota;
+
         try {
             listMascota = jdbcTemplate.queryForList(SELECT);
 
