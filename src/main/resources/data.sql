@@ -25,11 +25,11 @@ VALUES (1, 'Bogotá D.C.', 11001),
 INSERT INTO propietario (tipo_doc, documento, nombre_propietario, direccion, telefono, nmid_ciudad)
 VALUES ('1','1003045448','CARLOS DEL CASTILLO','MZ N LOTE 9','3044672390',4);
 
-INSERT INTO mascota (nombre_mascota, nmid_especie, nmid_raza, f_naci, nmid_propietario, f_reg)
-VALUES ('Oriona', 3, 1, NOW(), 1, NOW());
-
 INSERT INTO raza (nmid_especie, nombre_raza)
 VALUES (1, 'Conejo Belier'),
        (2, 'Conejo Mini Lop'),
        (3, 'Labrador'),
        (4, 'Lobo Siveriano');
+
+INSERT INTO mascota (nombre_mascota, nmid_especie, nmid_raza, f_naci, nmid_propietario, f_reg)
+VALUES ('Oriona', 3, 1, NOW(), 1, NOW());
