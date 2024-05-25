@@ -1,6 +1,5 @@
 package com.softcaribbean.veterinaria.dao;
 
-import com.softcaribbean.veterinaria.dto.Raza;
 import com.softcaribbean.veterinaria.exception.DAOException;
 
 import java.util.List;
