@@ -38,7 +38,9 @@ CREATE TABLE IF NOT EXISTS raza (
     nmid_especie INT NOT NULL,
     nombre_raza varchar(25) NOT NULL,
     PRIMARY KEY(nmid)
-)
+);
+COMMENT ON COLUMN raza.nmid_especie IS 'Identificador de la especie a la que pertenece la raza';
+
 
 -- Relacion Propietario - Ciudad
 ALTER TABLE propietario ADD FOREIGN KEY (nmid_ciudad) REFERENCES ciudad(nmid);
